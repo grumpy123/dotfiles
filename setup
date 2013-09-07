@@ -3,8 +3,13 @@
 ln -s -f ~/dotfiles/zshrc ~/.zshrc
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
 ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
+if [ -d ~/.vim ]; then
+    print "Removing existing directory ~/.vim"
+    rm -r ~/.vim
+fi
+ln -s -f ~/dotfiles/vim ~/.vim
 
-mkdir ~/.dotfiles-local
+mkdir -p ~/.dotfiles-local
 
 touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/vimrc

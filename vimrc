@@ -3,7 +3,7 @@ source ~/.dotfiles-local/vimrc
 nnoremap ` :
 
 
-colorscheme darkblue_real
+colorscheme forloop7
 
 set showcmd                         " display incomplete commands 
 set colorcolumn=100                 " show colored column at column 100 as visual indicator.
