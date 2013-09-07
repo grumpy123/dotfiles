@@ -8,4 +8,4 @@ mkdir ~/.dotfiles-local
 
 touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/vimrc
-
+touch ~/.dotfiles-local/tmux.conf
