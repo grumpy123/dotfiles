@@ -4,7 +4,7 @@
 # functions, options, key bindings, etc.
 #
 
-source ~/.zshrc-ext
+source ~/.dotfiles-local/zshrc
 
 autoload -U compinit
 compinit

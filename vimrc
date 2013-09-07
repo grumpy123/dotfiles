@@ -1,4 +1,4 @@
-source ~/.vimrc-ext
+source ~/.dotfiles-local/vimrc
 
 nnoremap ` :
 
