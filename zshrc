@@ -6,10 +6,13 @@
 
 source ~/.dotfiles-local/zshrc
 
-source ~/dotfiles/zsh/themes/forloop7.theme 
-
 autoload -U compinit
 compinit
+
+autoload colors
+colors
+
+source ~/dotfiles/zsh/themes/forloop7.theme 
 
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
