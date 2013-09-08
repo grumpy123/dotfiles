@@ -9,7 +9,7 @@ source ~/.dotfiles-local/zshrc
 autoload -U compinit
 compinit
 
-autoload colors
+autoload -U colors
 colors
 
 source ~/dotfiles/zsh/themes/forloop7.theme 
@@ -37,20 +37,25 @@ setopt COMPLETE_IN_WORD
 ## disable mail checking
 #MAILCHECK=0
 
-# autoload -U colors
-#colors
-#
+# make HOME and END work (hopefully)
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 [[ "$terminfo[khome]" == "^[O"* ]] && bindkey -M viins "${terminfo[khome]/O/[}" beginning-of-line
 [[ "$terminfo[kend]" == "^[O"* ]] && bindkey -M viins "${terminfo[kend]/O/[}" end-of-line
 
 # setup local aliases and exports
-alias ll='ls -l'
-alias la='ls -la'
+# TODO: check if grep understands --color
+alias grep='grep --color=auto'
+
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+
+alias la='ls -lah'
 alias b='cd ..'
 alias bb='cd ../..'
 alias bbb='cd ../../..'
+alias bbbb='cd ../../../..'
+alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
 alias hist='history 1 | grep'
 
