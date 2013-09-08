@@ -1,5 +1,12 @@
 #! /bin/zsh
 
+if [[ $# < 1 || "$1" != "--force" ]]; then
+    print "This command erases existing .vimrc, .tmux.conf, .zshrc files and .vim folder"
+    print "Use force parameter to acknowledge you are aware:"
+    print "  setup --force"
+    exit 1
+fi
+
 ln -s -f ~/dotfiles/zshrc ~/.zshrc
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
 ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf

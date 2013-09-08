@@ -6,6 +6,8 @@
 
 source ~/.dotfiles-local/zshrc
 
+source ~/dotfiles/zsh/themes/forloop7.theme 
+
 autoload -U compinit
 compinit
 
