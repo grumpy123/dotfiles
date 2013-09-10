@@ -49,8 +49,10 @@ alias grep='grep --color=auto'
 
 alias ls='ls --color=auto'
 alias ll='ls -lh'
-
 alias la='ls -lah'
+
+alias less='less -S'
+
 alias b='cd ..'
 alias bb='cd ../..'
 alias bbb='cd ../../..'
