@@ -14,14 +14,14 @@ endif
 
 let colors_name = "forloop7"
 
-hi Normal       ctermfg=White      ctermbg=Black
-hi NonText      ctermfg=White      ctermbg=Black      cterm=none
-hi Visual       ctermbg=Black      ctermbg=DarkBlue   cterm=none
-hi VisualNOS    ctermfg=Black      ctermbg=DarkBlue   cterm=underline
+hi Normal       ctermfg=255        ctermbg=233
+hi NonText      ctermfg=255        ctermbg=233        cterm=none
+hi Visual       ctermbg=bg         ctermbg=19         cterm=none
+hi VisualNOS    ctermfg=bg         ctermbg=19         cterm=underline
 
-hi TabLine      ctermfg=White      ctermbg=Black      cterm=underline
-hi TabLineSel   ctermfg=Black      ctermbg=Yellow     cterm=none
-hi TabLineFill  ctermfg=White      ctermbg=Black      cterm=underline
+hi TabLine      ctermfg=255        ctermbg=bg         cterm=underline
+hi TabLineSel   ctermfg=bg         ctermbg=226        cterm=none
+hi TabLineFill  ctermfg=255        ctermbg=bg         cterm=underline
 
 hi ErrorMsg                        ctermbg=LightBlue
 hi Search                          ctermbg=DarkBlue   cterm=none term=none
@@ -52,16 +52,16 @@ hi DiffText     ctermfg=White      ctermbg=Red
 
 hi Cursor       ctermfg=Black      ctermbg=yellow
 
-hi Comment      ctermfg=DarkGrey
-hi Constant     ctermfg=Grey                           cterm=none
-hi Special      ctermfg=Brown                          cterm=none 
-hi Identifier   ctermfg=Cyan                           cterm=none
-hi Statement    ctermfg=Yellow                         cterm=none  
-hi PreProc      ctermfg=Magenta                        cterm=none
+hi Comment      ctermfg=243
+hi Constant     ctermfg=88                             cterm=none
+hi Special      ctermfg=160                            cterm=none 
+hi Identifier   ctermfg=27                             cterm=none
+hi Statement    ctermfg=184                            cterm=none  
+hi PreProc      ctermfg=94                             cterm=none
 hi type         ctermfg=Green                          cterm=none
 hi Underlined                                          cterm=underline term=underline
 hi Ignore       ctermfg=bg
-hi Todo         ctermfg=Red        ctermbg=bg          cterm=none
+hi Todo         ctermfg=124        ctermbg=bg          cterm=none
 
 " suggested by tigmoid, 2008 Jul 18
 " hi Pmenu
