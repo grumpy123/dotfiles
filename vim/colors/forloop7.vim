@@ -20,7 +20,7 @@ hi Visual       ctermbg=bg         ctermbg=19         cterm=none
 hi VisualNOS    ctermfg=bg         ctermbg=19         cterm=underline
 
 hi TabLine      ctermfg=255        ctermbg=bg         cterm=underline
-hi TabLineSel   ctermfg=bg         ctermbg=226        cterm=none
+hi TabLineSel   ctermfg=bg         ctermbg=178        cterm=none
 hi TabLineFill  ctermfg=255        ctermbg=bg         cterm=underline
 
 hi ErrorMsg                        ctermbg=LightBlue
@@ -32,25 +32,25 @@ hi MatchParen                      ctermbg=DarkGreen
 " hi Directory  
 hi Title        ctermfg=magenta                       cterm=bold
 " hi WarningMsg  
-hi WildMenu     ctermfg=Yellow     ctermbg=Black      cterm=none term=none
-hi ModeMsg      ctermfg=DarkGreen                         cterm=none 
+hi WildMenu     ctermfg=Yellow     ctermbg=bg         cterm=none term=none
+hi ModeMsg      ctermfg=DarkGreen                     cterm=none 
 hi MoreMsg      ctermfg=DarkGreen
 hi Question     ctermfg=Green                         cterm=none
 
-hi StatusLine   ctermfg=DarkRed    ctermbg=Gray       cterm=none term=none
-hi StatusLineNC ctermfg=DarkRed    ctermbg=Gray       cterm=none term=none
+hi StatusLine   ctermfg=88         ctermbg=Gray       cterm=none term=none
+hi StatusLineNC ctermfg=88         ctermbg=Gray       cterm=none term=none
 hi VertSplit                       ctermbg=Gray       cterm=none term=none
 
 hi Folded                          ctermbg=Black      cterm=bold term=bold
 hi FoldColumn                      ctermbg=Black      cterm=bold term=bold
 hi LineNr       ctermfg=Black      ctermbg=Yellow     cterm=none
 
-hi DiffAdd      ctermfg=White      ctermbg=Yellow     cterm=none term=none
-hi DiffChange   ctermfg=White      ctermbg=Blue       cterm=none
-hi DiffDelete   ctermfg=White      ctermbg=Red
-hi DiffText     ctermfg=White      ctermbg=Red
+hi DiffAdd      ctermfg=White      ctermbg=178        cterm=none term=none
+hi DiffChange   ctermfg=White      ctermbg=17         cterm=none
+hi DiffDelete   ctermfg=White      ctermbg=124
+hi DiffText     ctermfg=White      ctermbg=53
 
-hi Cursor       ctermfg=Black      ctermbg=yellow
+hi Cursor       ctermfg=bg         ctermbg=226
 
 hi Comment      ctermfg=243
 hi Constant     ctermfg=88                             cterm=none
