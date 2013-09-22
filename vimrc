@@ -2,6 +2,7 @@ source ~/.dotfiles-local/vimrc
 
 nnoremap ` :
 
+syntax on
 
 colorscheme forloop7
 
@@ -17,3 +18,9 @@ set splitbelow
 set splitright
 set textwidth=0 wrapmargin=0        " this turns off physical line wrapping (ie: automatic insertion of newlines)
 set autoindent
+set hlsearch
+set incsearch
+set ruler
+set showmode
+set noshowmatch
+set nowrap
