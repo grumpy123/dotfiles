@@ -1,5 +1,8 @@
 #! /bin/zsh
 
+set -e
+set -u
+
 if [[ $# < 1 || "$1" != "--force" ]]; then
     print "This command erases existing .vimrc, .tmux.conf, .zshrc files and .vim folder"
     print "Use force parameter to acknowledge you are aware:"
@@ -16,8 +19,12 @@ if [ -d ~/.vim ]; then
 fi
 ln -s -f ~/dotfiles/vim ~/.vim
 
-mkdir -p ~/.dotfiles-local
+mkdir -p ~/dotfiles/vim/swap
+mkdir -p ~/dotfiles/vim/undo
 
+mkdir -p ~/.dotfiles-local
 touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/vimrc
 touch ~/.dotfiles-local/tmux.conf
+
+git config --global color.ui true

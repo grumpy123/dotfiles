@@ -51,6 +51,7 @@ hi DiffDelete   ctermfg=White      ctermbg=124
 hi DiffText     ctermfg=White      ctermbg=53
 
 hi Cursor       ctermfg=bg         ctermbg=226
+hi nCursor      ctermfg=111        ctermbg=226
 
 hi Comment      ctermfg=243
 hi Constant     ctermfg=88                             cterm=none
