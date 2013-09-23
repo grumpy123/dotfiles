@@ -14,6 +14,8 @@ colors
 
 source ~/dotfiles/zsh/themes/forloop7.theme 
 
+bindkey -e
+
 # promptinit
 
 #allow tab completion in the middle of a word
@@ -39,12 +41,6 @@ setopt HIST_IGNORE_DUPS
 
 ## disable mail checking
 #MAILCHECK=0
-
-# make HOME and END work (hopefully)
-#bindkey '\e[1~' beginning-of-line
-#bindkey '\e[4~' end-of-line
-#[[ "$terminfo[khome]" == "^[O"* ]] && bindkey -M viins "${terminfo[khome]/O/[}" beginning-of-line
-#[[ "$terminfo[kend]" == "^[O"* ]] && bindkey -M viins "${terminfo[kend]/O/[}" end-of-line
 
 # From: http://zshwiki.org/home/zle/bindkeys
 # create a zkbd compatible hash;
