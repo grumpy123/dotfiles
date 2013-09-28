@@ -34,7 +34,7 @@ set   esckeys                     " Disabling this broke cursors in INSERT mode 
 set   expandtab                   " TAB into SPACEs
 set   fileformat=unix             " Always use UNIX EOL if possible
 set   formatoptions=ronl          " disabled t for no text wrapping, TODO: can re-enable?
-set   gdefault                    " s///g replaces all instances in line (not only the first one)
+set nogdefault                    " s///g replaces all instances in line (not only the first one)
 "set   guicursor=n:block-nCursor  " Doesn't seem to work under Cygwin
 set   hlsearch                    " Highlight all search matches
 set   history=100                 " Command and search history size
