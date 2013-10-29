@@ -27,4 +27,9 @@ touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/vimrc
 touch ~/.dotfiles-local/tmux.conf
 
+if [ -f ~/.dotfiles-local/setup ]; then
+    print "Running ~/.dotfiles-local/setup"
+    ~/.dotfiles-local/setup
+fi
+
 git config --global color.ui true
