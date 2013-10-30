@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo tic ~/dotfiles/distro-setup/screen-256color.terminfo
+sudo tic ~/dotfiles/distro-setup/screen-256color-s.terminfo
+sudo tic ~/dotfiles/distro-setup/screen-256color-bce-s.terminfo
