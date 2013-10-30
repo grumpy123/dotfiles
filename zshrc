@@ -6,6 +6,12 @@
 
 source ~/.dotfiles-local/zshrc
 
+if [[ "$TERM" == "xterm" ]]
+then
+    echo 'Override $TERM variable to xterm-256color'
+    export TERM=xterm-256color
+fi
+
 autoload -U compinit
 compinit
 
