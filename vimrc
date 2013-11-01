@@ -1,6 +1,7 @@
 source ~/.dotfiles-local/vimrc
 
 nnoremap ` :
+nnoremap <CR> :noh<CR><CR>
 
 syntax on
 
