@@ -127,12 +127,25 @@ function gr-svn() {
     grep -ir "$grep_expr" $grep_path | grep -v "\.svn"| grep "$grep_expr"
 }
 
-function agent(){
-    local _kk_agent_pid_file=~/.ssh/.agent-pid-file
-    if [[ -f $_kk_agent_pid_file ]]
+function agent() {
+    local agent_bin=ssh-agent
+    local add_key_bin=ssh-add
+
+    if [[ -n "$SSH_AGENT_BIN" ]]
+    then
+        local agent_bin=$SSH_AGENT_BIN
+    fi
+
+    if [[ -n "$SSH_ADD_KEY_BIN" ]]
+    then
+        local add_key_bin=$SSH_ADD_KEY_BIN
+    fi
+
+    local agent_pid_file=~/.ssh/.agent-pid-file
+    if [[ -f $agent_pid_file ]]
     then
         print 'refreshing agent from file'
-        eval `cat $_kk_agent_pid_file`
+        eval `cat $agent_pid_file`
     else
         print 'no agent-pid file, cleaning environment'
         SSH_AGENT_PID=
@@ -149,12 +162,13 @@ function agent(){
     if [[ -z "$SSH_AGENT_PID" ]]
     then
         print 'Starting new agent'
-        ssh-agent -s > $_kk_agent_pid_file
-        eval `cat $_kk_agent_pid_file`
-        ssh-add ~/.ssh/id_rsa.pem
+        $agent_bin -s > $agent_pid_file
+        eval `cat $agent_pid_file`
+        $add_key_bin ~/.ssh/id_rsa.pem
     fi
 }
 
+alias kill-agent='killall ssh-agent'
 
 export EDITOR=vim
 export P4EDITOR=vim
