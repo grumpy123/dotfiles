@@ -127,18 +127,32 @@ function gr-svn() {
     grep -ir "$grep_expr" $grep_path | grep -v "\.svn"| grep "$grep_expr"
 }
 
-function agent() {
-    local agent_bin=ssh-agent
+function agent-add() {
     local add_key_bin=ssh-add
-
-    if [[ -n "$SSH_AGENT_BIN" ]]
-    then
-        local agent_bin=$SSH_AGENT_BIN
-    fi
+    local key_file_path=
 
     if [[ -n "$SSH_ADD_KEY_BIN" ]]
     then
         local add_key_bin=$SSH_ADD_KEY_BIN
+    fi
+
+    if [[ -n "$SSH_KEY_FILE_PATH" ]]
+    then
+        local key_file_path=$SSH_KEY_FILE_PATH
+    fi
+
+    if [[ -n "$key_file_path" ]]
+    then
+        $add_key_bin $key_file_path
+    fi
+}
+
+function agent() {
+    local agent_bin=ssh-agent
+
+    if [[ -n "$SSH_AGENT_BIN" ]]
+    then
+        local agent_bin=$SSH_AGENT_BIN
     fi
 
     local agent_pid_file=~/.ssh/.agent-pid-file
@@ -164,7 +178,8 @@ function agent() {
         print 'Starting new agent'
         $agent_bin -s > $agent_pid_file
         eval `cat $agent_pid_file`
-        $add_key_bin ~/.ssh/id_rsa.pem
+
+        agent-add
     fi
 }
 
