@@ -130,6 +130,7 @@ function gr-svn() {
 function agent-add() {
     local add_key_bin=ssh-add
     local key_file_path=
+    local key_additional_auth=
 
     if [[ -n "$SSH_ADD_KEY_BIN" ]]
     then
@@ -141,9 +142,19 @@ function agent-add() {
         local key_file_path=$SSH_KEY_FILE_PATH
     fi
 
+    if [[ -n "$SSH_ADDITIONAL_AUTH" ]]
+    then
+        local key_additional_auth=$SSH_ADDITIONAL_AUTH
+    fi
+
     if [[ -n "$key_file_path" ]]
     then
         $add_key_bin $key_file_path
+    fi
+
+    if [[ -n "$key_additional_auth" ]]
+    then
+        $add_key_bin $key_additional_auth
     fi
 }
 
