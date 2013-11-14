@@ -32,16 +32,23 @@ setopt COMPLETE_IN_WORD
 ## restart running processes on exit
 #setopt HUP
 
+#pushes current command on command stack and gives blank line, after that line
+#runs command stack is popped
+bindkey "^T" push-line-or-edit
+
 ## history
 #setopt APPEND_HISTORY
 ## for sharing history between zsh processes
 #setopt INC_APPEND_HISTORY
 #setopt SHARE_HISTORY
 #setopt APPEND_HISTORY
+HISTFILE=$HOME/.zhistory
+HISTSIZE=SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
+setopt HIST_VERIFY
 
 ## never ever beep ever
 #setopt NO_BEEP
