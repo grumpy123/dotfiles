@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 source ~/.dotfiles-local/vimrc
 
 nnoremap ` :
