@@ -36,6 +36,13 @@ setopt COMPLETE_IN_WORD
 #runs command stack is popped
 bindkey "^T" push-line-or-edit
 
+# Case insensitive completion
+setopt EXTENDEDGLOB 
+setopt NO_CASE_GLOB
+setopt NUMERIC_GLOB_SORT
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 ## history
 #setopt APPEND_HISTORY
 ## for sharing history between zsh processes
