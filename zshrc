@@ -106,6 +106,8 @@ key[PageDown]=${terminfo[knp]}
 
 
 # setup local aliases and exports
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+
 # TODO: check if grep understands --color
 alias grep='grep --color=auto'
 
@@ -122,6 +124,18 @@ alias bbbb='cd ../../../..'
 alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
 alias hist='history 1 | grep'
+
+alias -g H='| head'
+alias -g T='2>&1 | tee -a'
+alias -g TL='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g HL="--help | less"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
 
 function gr-svn() {
     local grep_expr=$1
