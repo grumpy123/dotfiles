@@ -1,4 +1,16 @@
-execute pathogen#infect()
+" turn filetype detection off and, even if it's not strictly
+" necessary, disable loading of indent scripts and filetype plugins
+filetype off
+filetype plugin indent off
+
+" pathogen runntime injection and help indexing
+call pathogen#infect()
+call pathogen#helptags()
+
+" turn filetype detection, indent scripts and filetype plugins on
+" and syntax highlighting too
+filetype plugin indent on
+syntax on
 
 source ~/.dotfiles-local/vimrc
 
