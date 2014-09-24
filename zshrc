@@ -92,17 +92,17 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
-# Had to disable this, wasn't working when connecting from PuTTY to RHEL
+# Disable this if need to use PuTTY, this wasn't working when connecting from PuTTY to RHEL
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
-#function zle-line-init () {
-#    echoti smkx
-#}
-#function zle-line-finish () {
-#    echoti rmkx
-#}
-#zle -N zle-line-init
-#zle -N zle-line-finish  
+function zle-line-init () {
+    echoti smkx
+}
+function zle-line-finish () {
+    echoti rmkx
+}
+zle -N zle-line-init
+zle -N zle-line-finish  
 
 
 # setup local aliases and exports
