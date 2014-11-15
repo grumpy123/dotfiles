@@ -60,6 +60,7 @@ set   laststatus=2                " Status line, 0 - no, 1 - auto, 2 - always
 set nolist                        " Don't show special characters
 set   listchars=tab:>-,trail:~,eol:/  " But if you are, show these
 set   magic                       " Should be on 99% of the time, so just do it
+set   mouse=a                     " Enable mouse, mouse=nicr has also been suggested
 set nonumber                      " Don't need those line numbers
 set nopreserveindent              " Be aggressive re-indenting (with spaces, since expandtab is set)
 set   pumheight=0                 " Unlimitted pop-up menu size (space allowing)
