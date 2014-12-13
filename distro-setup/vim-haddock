@@ -1,7 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
-_setup_haddock_count=`grep -c haddock_browser ~/.dotfiles-local/vimrc`
-if [[ $_setup_haddock_count > 0 ]]; then
+set -e
+set -u
+
+_setup_haddock_count=0
+if [ -f ~/.dotfiles-local/vimrc ]; then
+    _setup_haddock_count=`grep -c haddock_browser ~/.dotfiles-local/vimrc`
+fi
+
+if [[ $_setup_haddock_count == 0 ]]; then
     echo 'Configuring Haddock'
     echo '" Configure browser for haskell_doc.vim' >> ~/.dotfiles-local/vimrc
     echo 'let g:haddock_browser = "open"' >> ~/.dotfiles-local/vimrc

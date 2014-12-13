@@ -1,4 +1,4 @@
-#! /bin/zsh
+#!/bin/zsh
 
 set -e
 set -u
@@ -48,8 +48,8 @@ git config user.email "grumpy@forloop7.com"
 git remote set-url origin https://forloop7@github.com/forloop7/dotfiles.git
 git config credential.helper 'cache --timeout=28800' #8h
 
-cd ~/dotfiles/vim
+cd ~/dotfiles/
 git submodule init
 git submodule update
 
-~/dorfiles/distro-setup/vim-haddock
+~/dotfiles/distro-setup/vim-haddock
