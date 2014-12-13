@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_setup_haddock_count=`grep -c haddock_browser ~/.dotfiles-local/vimrc`
+if [[ $_setup_haddock_count > 0 ]]; then
+    echo 'Configuring Haddock'
+    echo '" Configure browser for haskell_doc.vim' >> ~/.dotfiles-local/vimrc
+    echo 'let g:haddock_browser = "open"' >> ~/.dotfiles-local/vimrc
+    echo 'let g:haddock_browser_callformat = "%s %s"' >> ~/.dotfiles-local/vimrc
+fi
