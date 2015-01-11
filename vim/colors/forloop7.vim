@@ -1,10 +1,8 @@
 " Vim color file
-" Maintainer: Bohdan Vlasyuk <bohdan@vstu.edu.ua>
-" Last Change: 2008 Jul 18
+" Maintainer: grumpy@forloop7.com
+" Based on Darkblue scheme, by Bohdan Vlasyuk <bohdan@vstu.edu.ua>
 
-" Darkblue -- for those who prefer Dark background
-" [note: looks bit uglier with come terminal palettes,
-" but is fine on default linux console palette.]
+" Forloop7 -- for those who prefer Dark background and high contrast
 
 set bg=dark
 hi clear
@@ -64,8 +62,9 @@ hi Underlined                                          cterm=underline term=unde
 hi Ignore       ctermfg=bg
 hi Todo         ctermfg=124        ctermbg=bg          cterm=none
 
-" suggested by tigmoid, 2008 Jul 18
-" hi Pmenu
-" hi PmenuSel  
-" hi PmenuSbar  
-" hi PmenuThumb 
+hi Pmenu        ctermfg=52         ctermbg=234         cterm=none term=none
+hi PmenuSel     ctermfg=88         ctermbg=235         cterm=none term=none
+hi PmenuSbar    ctermfg=52         ctermbg=232         cterm=none term=none
+hi PmenuThumb   ctermfg=88         ctermbg=240         cterm=none term=none
+" hi PmenuSbar scroll bar 
+" hi PmenuThumb scroll thumb
