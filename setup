@@ -43,10 +43,10 @@ fi
 
 export GIT_DIR=$DIR/.git
 git config --global color.ui true
-git config user.name "Grumpy"
-git config user.email "grumpy@forloop7.com"
+git config --global user.name "Grumpy"
+git config --global user.email "grumpy@forloop7.com"
 git remote set-url origin https://forloop7@github.com/forloop7/dotfiles.git
-git config credential.helper 'cache --timeout=28800' #8h
+git config --global credential.helper 'cache --timeout=28800' #8h
 
 cd ~/dotfiles/
 git submodule init
