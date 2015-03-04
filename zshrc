@@ -24,7 +24,7 @@ bindkey -e
 
 # Makes brew-managed stuff the default under OSX
 if [[ "$(uname)" == "Darwin" ]]; then
-    export PATH=/usr/local/bin:~/Library/Haskell/bin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:~/Library/Haskell/bin:$PATH
 else
     export PATH=~/.cabal/bin:$PATH
 fi

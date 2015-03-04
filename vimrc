@@ -21,6 +21,7 @@ syntax on
 
 colorscheme forloop7
 
+let mapleader=" "
 
 set   autoindent                  " Copy indent from current line when starting a new line
 set noautochdir                   " Change the current working directory whenever you open a file, ...
