@@ -97,3 +97,12 @@ set  whichwrap=<,>,[,]            " Left and Right allowed to pass line end, nor
 set   wildmode=list:longest
 set nowrap                        " Don't wrap displaying long lines (don't confude with textwrap)
 set   wrapmargin=0                " Shoul not be needed, since text wrapping is off
+
+let g:NERDTreeWinSize = 40
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_no_startup_for_diff = 1
+let g:nerdtree_tabs_meaningful_tab_names = 1
+let g:nerdtree_tabs_smart_startup_focus = 2
+let g:nerdtree_tabs_synchronize_view = 1
+let g:nerdtree_tabs_synchronize_focus = 1
+
