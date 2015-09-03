@@ -34,6 +34,7 @@ fi
 mkdir -p ~/.dotfiles-local
 touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/vimrc
+touch ~/.dotfiles-local/vimrc-post
 touch ~/.dotfiles-local/tmux.conf
 
 if [ -f ~/.dotfiles-local/setup ]; then

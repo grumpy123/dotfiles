@@ -7,12 +7,12 @@ filetype plugin indent off
 call pathogen#infect()
 call pathogen#helptags()
 
+source ~/.dotfiles-local/vimrc
+
 " turn filetype detection, indent scripts and filetype plugins on
 " and syntax highlighting too
 filetype plugin indent on
 syntax on
-
-source ~/.dotfiles-local/vimrc
 
 nnoremap ` :
 nnoremap <CR> :noh<CR><CR>
@@ -23,7 +23,6 @@ colorscheme forloop7
 
 let mapleader=" "
 
-set   autoindent                  " Copy indent from current line when starting a new line
 set noautochdir                   " Change the current working directory whenever you open a file, ...
 set   autoread                    " When a file has been detected to have been changed outside of Vim automatically read it again
 set   autoindent                  " Copy indent from current line when starting a new line, see smartindent, cindent
@@ -107,3 +106,9 @@ let g:nerdtree_tabs_smart_startup_focus = 2
 let g:nerdtree_tabs_synchronize_view = 1
 let g:nerdtree_tabs_synchronize_focus = 1
 
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+source ~/.dotfiles-local/vimrc-post
