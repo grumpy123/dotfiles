@@ -17,6 +17,12 @@ syntax on
 nnoremap ` :
 nnoremap <CR> :noh<CR><CR>
 
+" Auto correction :)
+iabbrev teh the
+iabbrev tehn then
+iabbrev taht that
+
+
 syntax on
 
 colorscheme forloop7
