@@ -23,7 +23,7 @@ ln -s -f ~/dotfiles/vim ~/.vim
 
 mkdir -p ~/dotfiles/vim/swap
 mkdir -p ~/dotfiles/vim/undo
-mkdir -p ~/dotfiles/vim/autoload 
+mkdir -p ~/dotfiles/vim/autoload
 mkdir -p ~/dotfiles/vim/bundle
 
 if [ ! -f ~/dotfiles/vim/autoload/pathogen.vim ]; then
@@ -44,10 +44,15 @@ fi
 
 export GIT_DIR=$DIR/.git
 git config --global color.ui true
-git config --global user.name "Grumpy"
-git config --global user.email "grumpy@forloop7.com"
+git config user.name "Grumpy"
+git config user.email "grumpy@forloop7.com"
 git remote set-url origin https://forloop7@github.com/forloop7/dotfiles.git
 git config --global credential.helper 'cache --timeout=28800' #8h
+
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
 
 cd ~/dotfiles/
 git submodule init

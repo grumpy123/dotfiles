@@ -104,6 +104,11 @@ set   wildmode=list:longest
 set nowrap                        " Don't wrap displaying long lines (don't confude with textwrap)
 set   wrapmargin=0                " Shoul not be needed, since text wrapping is off
 
+" Shift-T for inserts a to-do
+nnoremap T O// TODO(<c-r>=$USER<cr>):<space>
+" Shift-R to replace word
+nnoremap R ciw
+
 let g:NERDTreeWinSize = 40
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_no_startup_for_diff = 1
