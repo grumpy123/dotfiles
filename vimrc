@@ -69,6 +69,7 @@ set   magic                       " Should be on 99% of the time, so just do it
 set   mouse=a                     " Enable mouse, mouse=nicr has also been suggested
 set nonumber                      " Don't need those line numbers
 set nopreserveindent              " Be aggressive re-indenting (with spaces, since expandtab is set)
+set   pastetoggle=<F2>            " Toggle paste/nopaste in INSERT mode
 set   pumheight=0                 " Unlimitted pop-up menu size (space allowing)
 set   restorescreen               " Restore screen on exit
 set   ruler                       " Show line/col number, needed even with laststatus=2
@@ -108,6 +109,8 @@ set   wrapmargin=0                " Shoul not be needed, since text wrapping is 
 nnoremap T O// TODO(<c-r>=$USER<cr>):<space>
 " Shift-R to replace word
 nnoremap R ciw
+" <F2> toggles paste/nopaste in NORMAL mode (see pastetoggle for INSERT mode)
+nnoremap <F2> :set invpaste paste?<CR>
 
 let g:NERDTreeWinSize = 40
 let g:nerdtree_tabs_open_on_console_startup = 1
