@@ -148,6 +148,8 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 
+alias ta='tmux a -d'
+
 function gr-svn() {
     local grep_expr=$1
     local grep_path=$2
@@ -237,4 +239,3 @@ alias kill-agent='killall ssh-agent'
 
 export EDITOR=vim
 export P4EDITOR=vim
-
