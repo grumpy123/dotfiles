@@ -112,7 +112,7 @@ zle -N zle-line-finish
 
 
 # setup local aliases and exports
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias reload-zshrc=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
 # TODO: check if grep understands --color
 
@@ -134,7 +134,7 @@ alias bbb='cd ../../..'
 alias bbbb='cd ../../../..'
 alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
-alias hist='history 1 | grep'
+alias reload='fc -R'
 
 alias -g H='| head'
 alias -g T='2>&1 | tee -a'

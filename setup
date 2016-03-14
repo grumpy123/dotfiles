@@ -49,6 +49,9 @@ git config user.email "grumpy@forloop7.com"
 git remote set-url origin https://forloop7@github.com/forloop7/dotfiles.git
 git config --global credential.helper 'cache --timeout=28800' #8h
 
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.ci commit
