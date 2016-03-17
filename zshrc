@@ -135,6 +135,7 @@ alias bbbb='cd ../../../..'
 alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
 alias reload='fc -R'
+alias ng='noglob'
 
 alias -g H='| head'
 alias -g T='2>&1 | tee -a'
@@ -236,6 +237,11 @@ function agent() {
 }
 
 alias kill-agent='killall ssh-agent'
+
+function calc_() {
+  echo "$(($@))"
+}
+alias cl='noglob calc_'
 
 export EDITOR=vim
 export P4EDITOR=vim
