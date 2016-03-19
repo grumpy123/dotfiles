@@ -245,3 +245,5 @@ alias cl='noglob calc_'
 
 export EDITOR=vim
 export P4EDITOR=vim
+
+source ~/.dotfiles-local/zshrc-post
