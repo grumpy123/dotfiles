@@ -15,6 +15,7 @@ filetype plugin indent on
 syntax on
 
 nnoremap ` :
+vnoremap ` :
 nnoremap <CR> :noh<CR><CR>
 
 " Auto correction :)
