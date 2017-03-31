@@ -30,6 +30,9 @@ else
 fi
 # promptinit
 
+# Disable Ctl+S freezing the terminal
+stty -ixon
+
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
 
@@ -152,6 +155,7 @@ alias -g NUL="> /dev/null 2>&1"
 alias ta='tmux a -d'
 
 alias ve='source env/bin/activate'
+alias vim='vim -p'
 
 function gr-svn() {
     local grep_expr=$1
