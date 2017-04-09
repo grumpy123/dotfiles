@@ -33,6 +33,7 @@ fi
 
 mkdir -p ~/.dotfiles-local
 touch ~/.dotfiles-local/zshrc
+touch ~/.dotfiles-local/zshrc-post
 touch ~/.dotfiles-local/vimrc
 touch ~/.dotfiles-local/vimrc-post
 touch ~/.dotfiles-local/tmux.conf
@@ -45,8 +46,8 @@ fi
 export GIT_DIR=$DIR/.git
 git config --global color.ui true
 git config user.name "Grumpy"
-git config user.email "grumpy@forloop7.com"
-git remote set-url origin https://forloop7@github.com/forloop7/dotfiles.git
+git config user.email "grumpy@123koz.com"
+git remote set-url origin https://grumpy123@github.com/grumpy123/dotfiles.git
 git config --global credential.helper 'cache --timeout=28800' #8h
 
 git config --global diff.tool vimdiff

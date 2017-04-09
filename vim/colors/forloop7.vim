@@ -1,5 +1,5 @@
 " Vim color file
-" Maintainer: grumpy@forloop7.com
+" Maintainer: grumpy@123koz.com
 " Based on Darkblue scheme, by Bohdan Vlasyuk <bohdan@vstu.edu.ua>
 
 " Forloop7 -- for those who prefer Dark background and high contrast
