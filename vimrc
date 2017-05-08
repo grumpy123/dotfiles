@@ -1,18 +1,19 @@
-" turn filetype detection off and, even if it's not strictly
-" necessary, disable loading of indent scripts and filetype plugins
-filetype off
-filetype plugin indent off
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
-" pathogen runntime injection and help indexing
-call pathogen#infect()
-call pathogen#helptags()
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'vim-scripts/a.vim'
+
+" Initialize plugin system
+call plug#end()
+
+filetype plugin on
+filetype plugin indent on 
 
 source ~/.dotfiles-local/vimrc
-
-" turn filetype detection, indent scripts and filetype plugins on
-" and syntax highlighting too
-filetype plugin indent on
-syntax on
 
 nnoremap ` :
 vnoremap ` :
@@ -86,7 +87,7 @@ set   showtabline=1               " Show tab headers when multiple open
 set   smartcase                   " Search case sensitive when pattern contains upper case characters
 set nosmartindent                 " Smart indent moves comments all the way left
 set   smarttab                    " TAB and BS skip 4 spaces, at the beginning of the line
-set   softtabstop=0               " Soft TAB seems wonky, and I use spaces anyway
+set   softtabstop=4               " Soft TAB seems wonky, and I use spaces anyway
 set startofline                   " Don't skip to the first non-space
 " set   statusline " TODO FIXME TODO
 set   switchbuf=newtab,usetab     " Switching buffers opens in new tabs (TODO: doesn't do anything I can see)
@@ -113,13 +114,23 @@ nnoremap R ciw
 " <F2> toggles paste/nopaste in NORMAL mode (see pastetoggle for INSERT mode)
 nnoremap <F2> :set invpaste paste?<CR>
 
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 50
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_no_startup_for_diff = 1
 let g:nerdtree_tabs_meaningful_tab_names = 1
 let g:nerdtree_tabs_smart_startup_focus = 2
 let g:nerdtree_tabs_synchronize_view = 1
 let g:nerdtree_tabs_synchronize_focus = 1
+let g:nerdtree_tabs_autoclose = 1
+let g:nerdtree_tabs_focus_on_files = 1
+let g:nerdtree_tabs_autofind = 1
+
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_error_symbol = 'x'
+let g:ycm_warning_symbol = '!'
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
 
 augroup reload_vimrc " {
     autocmd!
