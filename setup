@@ -26,11 +26,6 @@ mkdir -p ~/dotfiles/vim/undo
 mkdir -p ~/dotfiles/vim/autoload
 mkdir -p ~/dotfiles/vim/bundle
 
-if [ ! -f ~/dotfiles/vim/autoload/pathogen.vim ]; then
-    curl -Sso ~/dotfiles/vim/autoload/pathogen.vim \
-        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-fi
-
 mkdir -p ~/.dotfiles-local
 touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/zshrc-post
