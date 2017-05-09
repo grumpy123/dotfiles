@@ -52,9 +52,9 @@ hi Cursor       ctermfg=bg         ctermbg=226
 hi nCursor      ctermfg=111        ctermbg=226
 
 hi Comment      ctermfg=243
-hi Constant     ctermfg=88                             cterm=none
-hi Special      ctermfg=160                            cterm=none 
-hi Identifier   ctermfg=27                             cterm=none
+hi Constant     ctermfg=160                            cterm=none
+hi Special      ctermfg=166                            cterm=none 
+hi Identifier   ctermfg=33                             cterm=none
 hi Statement    ctermfg=184                            cterm=none  
 hi PreProc      ctermfg=94                             cterm=none
 hi type         ctermfg=Green                          cterm=none
@@ -63,8 +63,8 @@ hi Ignore       ctermfg=bg
 hi Todo         ctermfg=124        ctermbg=bg          cterm=none
 
 hi Pmenu        ctermfg=52         ctermbg=234         cterm=none term=none
-hi PmenuSel     ctermfg=88         ctermbg=235         cterm=none term=none
+hi PmenuSel     ctermfg=124        ctermbg=235         cterm=none term=none
 hi PmenuSbar    ctermfg=52         ctermbg=232         cterm=none term=none
-hi PmenuThumb   ctermfg=88         ctermbg=240         cterm=none term=none
+hi PmenuThumb   ctermfg=124        ctermbg=240         cterm=none term=none
 " hi PmenuSbar scroll bar 
 " hi PmenuThumb scroll thumb

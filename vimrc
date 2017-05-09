@@ -6,6 +6,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Initialize plugin system
 call plug#end()
@@ -27,6 +28,7 @@ iabbrev taht that
 
 syntax on
 
+set t_Co=256
 colorscheme forloop7
 
 let mapleader=" "
@@ -131,6 +133,8 @@ let g:ycm_error_symbol = 'x'
 let g:ycm_warning_symbol = '!'
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
+
+nnoremap <leader>v :AV<CR>
 
 augroup reload_vimrc " {
     autocmd!
