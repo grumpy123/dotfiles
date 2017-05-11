@@ -155,7 +155,7 @@ alias -g NUL="> /dev/null 2>&1"
 alias ta='tmux a -d'
 
 alias ve='source env/bin/activate'
-alias vim='vim -p'
+alias vimp='vim -p'
 
 function gr-svn() {
     local grep_expr=$1

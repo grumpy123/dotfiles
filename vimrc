@@ -7,6 +7,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Raimondi/delimitMate'
 
 " Initialize plugin system
 call plug#end()
@@ -135,6 +136,8 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
 
 nnoremap <leader>v :AV<CR>
+nnoremap gn :bn<CR>
+nnoremap gp :bp<CR>
 
 augroup reload_vimrc " {
     autocmd!
