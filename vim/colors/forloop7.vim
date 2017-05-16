@@ -22,8 +22,8 @@ hi TabLineSel   ctermfg=bg         ctermbg=178        cterm=none
 hi TabLineFill  ctermfg=255        ctermbg=bg         cterm=underline
 
 hi ErrorMsg                        ctermbg=LightBlue
-hi Search                          ctermbg=DarkBlue   cterm=none term=none
-hi IncSearch    ctermfg=White      ctermbg=DarkRed    cterm=none
+hi Search       ctermfg=234        ctermbg=221        cterm=none term=none
+hi IncSearch    ctermfg=White      ctermbg=160        cterm=none
 hi MatchParen                      ctermbg=DarkGreen
 
 " hi SpecialKey  
@@ -41,7 +41,7 @@ hi VertSplit                       ctermbg=Gray       cterm=none term=none
 
 hi Folded                          ctermbg=Black      cterm=bold term=bold
 hi FoldColumn                      ctermbg=Black      cterm=bold term=bold
-hi LineNr       ctermfg=Black      ctermbg=Yellow     cterm=none
+hi LineNr       ctermfg=60        ctermbg=235        cterm=none
 
 hi DiffAdd      ctermfg=White      ctermbg=178        cterm=none term=none
 hi DiffChange   ctermfg=White      ctermbg=17         cterm=none
@@ -62,8 +62,8 @@ hi Underlined                                          cterm=underline term=unde
 hi Ignore       ctermfg=bg
 hi Todo         ctermfg=124        ctermbg=bg          cterm=none
 
-hi Pmenu        ctermfg=52         ctermbg=234         cterm=none term=none
-hi PmenuSel     ctermfg=124        ctermbg=235         cterm=none term=none
+hi Pmenu        ctermfg=124        ctermbg=234         cterm=none term=none
+hi PmenuSel     ctermfg=196        ctermbg=240         cterm=none term=none
 hi PmenuSbar    ctermfg=52         ctermbg=232         cterm=none term=none
 hi PmenuThumb   ctermfg=124        ctermbg=240         cterm=none term=none
 " hi PmenuSbar scroll bar 

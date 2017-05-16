@@ -31,6 +31,7 @@ touch ~/.dotfiles-local/zshrc
 touch ~/.dotfiles-local/zshrc-post
 touch ~/.dotfiles-local/vimrc
 touch ~/.dotfiles-local/vimrc-post
+touch ~/.dotfiles-local/vimrc-plug
 touch ~/.dotfiles-local/tmux.conf
 
 if [ -f ~/.dotfiles-local/setup ]; then

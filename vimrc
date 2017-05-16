@@ -8,12 +8,15 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Raimondi/delimitMate'
+Plug 'wincent/command-t'
+
+source ~/.dotfiles-local/vimrc-plug
 
 " Initialize plugin system
 call plug#end()
 
 filetype plugin on
-filetype plugin indent on 
+filetype plugin indent on
 
 source ~/.dotfiles-local/vimrc
 
@@ -72,7 +75,7 @@ set nolist                        " Don't show special characters
 set   listchars=tab:>-,trail:~,eol:/  " But if you are, show these
 set   magic                       " Should be on 99% of the time, so just do it
 set   mouse=a                     " Enable mouse, mouse=nicr has also been suggested
-set nonumber                      " Don't need those line numbers
+set   number                      " Like those line numbers now
 set nopreserveindent              " Be aggressive re-indenting (with spaces, since expandtab is set)
 set   pastetoggle=<F2>            " Toggle paste/nopaste in INSERT mode
 set   pumheight=0                 " Unlimitted pop-up menu size (space allowing)
@@ -138,6 +141,7 @@ nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>v :AV<CR>
 nnoremap gn :bn<CR>
 nnoremap gp :bp<CR>
+nnoremap gb :bp<CR>
 
 augroup reload_vimrc " {
     autocmd!
