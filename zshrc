@@ -20,7 +20,10 @@ colors
 
 source ~/dotfiles/zsh/themes/forloop7.theme 
 
-bindkey -e
+# VIM is better than Emacs
+bindkey -v
+# 10ms for key sequences
+export KEYTIMEOUT=1
 
 # Makes brew-managed stuff the default under OSX
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -44,6 +47,9 @@ setopt COMPLETE_IN_WORD
 #pushes current command on command stack and gives blank line, after that line
 #runs command stack is popped
 bindkey "^T" push-line-or-edit
+
+bindkey "^R" history-incremental-search-backward
+bindkey "^G" send-break
 
 # Case insensitive completion
 setopt EXTENDEDGLOB 

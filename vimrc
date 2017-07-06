@@ -4,11 +4,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"YCM in penalty box for now, supertab is in
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Raimondi/delimitMate'
 Plug 'wincent/command-t'
+Plug 'ervandew/supertab'
 
 source ~/.dotfiles-local/vimrc-plug
 
@@ -35,7 +37,8 @@ syntax on
 set t_Co=256
 colorscheme forloop7
 
-let mapleader=" "
+" Leave the default leader (\)
+"let mapleader=" "
 
 set noautochdir                   " Change the current working directory whenever you open a file, ...
 set   autoread                    " When a file has been detected to have been changed outside of Vim automatically read it again
