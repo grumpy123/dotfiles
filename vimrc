@@ -8,7 +8,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'Raimondi/delimitMate'
+" screws with . Plug 'Raimondi/delimitMate'
 Plug 'wincent/command-t'
 Plug 'ervandew/supertab'
 
