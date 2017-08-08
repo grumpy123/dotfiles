@@ -14,6 +14,7 @@ fi
 
 ln -s -f ~/dotfiles/zshrc ~/.zshrc
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
+ln -s -f ~/dotfiles/ideavimrc ~/.ideavimrc
 ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
 if [ -d ~/.vim ]; then
     print "Removing existing directory ~/.vim"
