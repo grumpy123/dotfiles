@@ -1,4 +1,17 @@
 # -*- shell-script -*-
-PROMPT_COLOR=${PROMPT_COLOR:-cyan}       # Set the prompt color; defaults to cyan
-PS1="%{${fg[$PROMPT_COLOR]}%}%B%n@%m] %b%{${fg[default]}%}"   # a nice colored prompt
-RPROMPT="%{${fg[$PROMPT_COLOR]}%}%B%(7~,.../,)%6~%b%{${fg[default]}%}"
+base_color=cyan
+time_color=blue
+ok_color=green
+cancel_color=red
+
+set_default_color="%{${fg[default]}%}"
+set_base_color="%{${fg[$base_color]}%}"
+set_time_color="%{${fg[$time_color]}%}"
+set_ok_color="%{${fg[$ok_color]}%}"
+set_cancel_color="%{${fg[$cancel_color]}%}"
+
+show_host="${set_base_color}%m"
+show_status="%(?,${set_ok_color}v,${set_cancel_color}x)"
+
+PS1="%B${show_host} ${set_time_color}%* ${show_status}${set_base_color}] %b${set_default_color}"
+RPROMPT="${set_base_color}%B%(7~,.../,)%6~%b${set_default_color}"
