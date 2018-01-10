@@ -47,9 +47,12 @@ setopt COMPLETE_IN_WORD
 #pushes current command on command stack and gives blank line, after that line
 #runs command stack is popped
 bindkey "^T" push-line-or-edit
+bindkey -M vicmd "^T" push-line-or-edit
 
 bindkey "^R" history-incremental-search-backward
+bindkey -M vicmd "^R" history-incremental-search-backward
 bindkey "^G" send-break
+bindkey -M vicmd "^G" send-break
 
 # Case insensitive completion
 setopt EXTENDEDGLOB 
