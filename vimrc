@@ -31,6 +31,9 @@ iabbrev teh the
 iabbrev tehn then
 iabbrev taht that
 
+" Expand %% into current file's folder
+cabbr <expr> %% expand('%:p:h')
+
 
 syntax on
 
