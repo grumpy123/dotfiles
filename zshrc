@@ -148,6 +148,7 @@ alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
 alias reload='fc -R'
 alias ng='noglob'
+alias fname='find . -iname'
 
 alias -g H='| head'
 alias -g T='2>&1 | tee -a'
@@ -160,6 +161,7 @@ alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
+alias -g X1='| xargs -n1 -r'
 
 alias ta='tmux a -d'
 
