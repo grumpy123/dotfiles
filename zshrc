@@ -122,6 +122,16 @@ function zle-line-finish () {
 zle -N zle-line-init
 zle -N zle-line-finish  
 
+autoload -Uz add-zsh-hook
+
+function _gr_store_cmd() {
+  _grumpy_curr_cmd_sc="$1"
+}
+add-zsh-hook preexec _gr_store_cmd
+
+function _gr_get_cmd() {
+  echo "$_grumpy_curr_cmd_sc"
+}
 
 # setup local aliases and exports
 alias reload-zshrc=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
