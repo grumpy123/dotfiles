@@ -74,6 +74,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_VERIFY
+# Don't confirm every rm * :)
+setopt RMSTARSILENT
 
 ## never ever beep ever
 #setopt NO_BEEP
@@ -161,14 +163,15 @@ alias ng='noglob'
 alias fname='find . -iname'
 
 alias -g H='| head'
-alias -g T='2>&1 | tee -a'
+alias -g T='2>&1 | tee'
+alias -g TA='2>&1 | tee -a'
 alias -g TL='| tail'
 alias -g G='| grep'
 alias -g L="| less"
 alias -g M="| most"
 alias -g HL="--help | less"
 alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
+alias -g CA="2>&1 | cat"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g X1='| xargs -n1 -r'
