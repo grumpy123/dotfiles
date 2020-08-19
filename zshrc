@@ -164,6 +164,7 @@ alias fname='find . -iname'
 
 alias -g H='| head'
 alias -g T='2>&1 | tee'
+alias -g Ttmp='2>&1 | tee ~/tmp/tmp'
 alias -g TA='2>&1 | tee -a'
 alias -g TL='| tail'
 alias -g G='| grep'
@@ -176,7 +177,7 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g X1='| xargs -n1 -r'
 
-alias ta='tmux a -d'
+alias ta='tmux new-session -A -D -s kko'
 
 alias ve='source env/bin/activate'
 alias vimp='vim -p'
