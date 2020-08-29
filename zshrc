@@ -54,6 +54,10 @@ bindkey -M vicmd "^R" history-incremental-search-backward
 bindkey "^G" send-break
 bindkey -M vicmd "^G" send-break
 
+# Enable full-screen editor
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd "v" edit-command-line
+
 # Case insensitive completion
 setopt EXTENDEDGLOB 
 setopt NO_CASE_GLOB
