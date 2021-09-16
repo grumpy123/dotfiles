@@ -186,6 +186,8 @@ alias ta='tmux new-session -A -D -s kko'
 alias ve='source env/bin/activate'
 alias vimp='vim -p'
 
+alias kc='kubectl'
+
 function gr-svn() {
     local grep_expr=$1
     local grep_path=$2

@@ -127,7 +127,7 @@ nnoremap R ciw
 nnoremap <F2> :set invpaste paste?<CR>
 
 let g:NERDTreeWinSize = 50
-let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 2
 let g:nerdtree_tabs_no_startup_for_diff = 1
 let g:nerdtree_tabs_meaningful_tab_names = 1
 let g:nerdtree_tabs_smart_startup_focus = 2
