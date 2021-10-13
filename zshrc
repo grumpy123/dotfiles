@@ -164,11 +164,10 @@ alias bbbbb='cd ../../../../..'
 alias ker='kinit -fl 1d'
 alias reload='fc -R'
 alias ng='noglob'
-alias fname='find . -iname'
 
 alias -g H='| head'
 alias -g T='2>&1 | tee'
-alias -g Ttmp='2>&1 | tee ~/tmp/tmp'
+alias -g TT='2>&1 | tee ~/tmp/tmp'
 alias -g TA='2>&1 | tee -a'
 alias -g TL='| tail'
 alias -g G='| grep'
@@ -186,24 +185,25 @@ alias ta='tmux new-session -A -D -s kko'
 alias ve='source env/bin/activate'
 alias vimp='vim -p'
 
+alias glog='git log -n'
+alias glog3='glog 3'
+alias hgst='git st'
+alias hgci='git add . && git ci'
+alias hga='git add . && git ci --amend'
+alias hgsl='glog 8'
+alias gpull='git pull origin master'
+alias gpush='git push origin -f'
+alias gnewbr='git create-branch -r'
+
+alias ctt='cat ~/tmp/tmp'
+alias ltt='less ~/tmp/tmp'
+alias ttt='tail ~/tmp/tmp'
+alias gtt='ctt | grep'
+
 alias kc='kubectl'
 
-function gr-svn() {
-    local grep_expr=$1
-    local grep_path=$2
-
-    if [[ -z "$grep_expr" ]]
-    then
-        grep_expr="empty-empty-empty"
-    fi
-
-    if [[ -z "$grep_path" ]]
-    then
-        grep_path="*"
-    fi
-
-    echo 'grep -ir "$grep_expr" $grep_path | grep -v "\.svn"| grep "$grep_expr"'
-    grep -ir "$grep_expr" $grep_path | grep -v "\.svn"| grep "$grep_expr"
+function fname() {
+    find . -type f -iname '*'$*'*' -ls
 }
 
 function agent-add() {
