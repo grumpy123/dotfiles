@@ -33,6 +33,9 @@ else
 fi
 # promptinit
 
+# USER without dots (K8s doesn't like dots in pod names)
+export DASH_USER="${USER:gs/\./-/}"
+
 # Disable Ctl+S freezing the terminal
 stty -ixon
 
@@ -142,6 +145,7 @@ function _gr_get_cmd() {
 # setup local aliases and exports
 alias reload-zshrc=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
+alias cat-zsh='cat ~/.zshrc ~/.dotfiles-local/zshrc*'
 # TODO: check if grep understands --color
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -185,7 +189,7 @@ alias ta='tmux new-session -A -D -s kko'
 alias ve='source env/bin/activate'
 alias vimp='vim -p'
 
-alias glog='git log -n'
+alias glog='git log --oneline -n'
 alias glog3='glog 3'
 alias hgst='git st'
 alias hgdiff='git diff'
@@ -193,10 +197,10 @@ alias hgdf='git diff'
 alias hgci='git add . && git ci'
 alias hga='git add . && git ci --amend'
 alias hgsl='glog 8'
-alias gpull='git pull origin master'
-alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push origin -f'
-alias gbrnew='git create-branch -r'
-alias gbrls='git branch -vv'
+alias gpull='git fetch origin && git merge origin/master'
+alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push origin'
+alias brls='git branch -vv'
+alias brrm='git branch -D'
 
 alias ctt='cat ~/tmp/tmp'
 alias ltt='less ~/tmp/tmp'
@@ -204,6 +208,17 @@ alias ttt='tail ~/tmp/tmp'
 alias gtt='ctt | grep'
 
 alias kc='kubectl'
+alias kc-debug='kc run $DASH_USER-shell --restart=Never --rm -i --tty --image debian -- bash'
+
+function brnew() {
+    if [[ -z "$1" ]]
+    then
+        echo "Must provide branch name"
+        return 1
+    fi
+
+    git create-branch -r "$1"
+}
 
 function fname() {
     find . -type f -iname '*'$*'*' -ls

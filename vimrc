@@ -137,6 +137,10 @@ let g:nerdtree_tabs_autoclose = 1
 let g:nerdtree_tabs_focus_on_files = 1
 let g:nerdtree_tabs_autofind = 1
 
+let g:NERDCreateDefaultMappings = 0
+nmap <leader>cc  <Plug>NERDCommenterToggle
+vmap <leader>cc  <Plug>NERDCommenterToggle<CR>gv
+
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_identifier_candidate_chars = 4
 let g:ycm_error_symbol = 'x'
@@ -149,6 +153,7 @@ nnoremap gn :bn<CR>
 nnoremap gp :bp<CR>
 nnoremap gb :bp<CR>
 
+imap <leader>[ []()
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
