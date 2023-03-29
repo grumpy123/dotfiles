@@ -27,11 +27,9 @@ export KEYTIMEOUT=1
 
 # Makes brew-managed stuff the default under OSX
 if [[ "$(uname)" == "Darwin" ]]; then
-    export PATH=/usr/local/bin:/usr/local/sbin:~/Library/Haskell/bin:$PATH
-else
-    export PATH=~/.cabal/bin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
-# promptinit
+export PATH=~/bin/:$PATH
 
 # USER without dots (K8s doesn't like dots in pod names)
 export DASH_USER="${USER:gs/\./-/}"
@@ -142,6 +140,10 @@ function _gr_get_cmd() {
   echo "$_grumpy_curr_cmd_sc"
 }
 
+function _gr_git_master() {
+    git symbolic-ref refs/remotes/origin/HEAD | sed 's/refs\/remotes\/origin\///'
+}
+
 # setup local aliases and exports
 alias reload-zshrc=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
@@ -184,12 +186,14 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g X1='| xargs -n1 -r'
 
-alias ta='tmux new-session -A -D -s kko'
+alias ta-kko='tmux new-session -A -D -s kko'
+alias ta-bg='tmux new-session -A -D -s bg'
 
-alias ve='source env/bin/activate'
+alias vcreate='python3 -m venv venv'
+alias ve='source venv/bin/activate'
 alias vimp='vim -p'
 
-alias glog='git log --oneline -n'
+alias glog='git log --oneline --decorate --first-parent -n'
 alias glog3='glog 3'
 alias hgst='git st'
 alias hgdiff='git diff'
@@ -197,18 +201,42 @@ alias hgdf='git diff'
 alias hgci='git add . && git ci'
 alias hga='git add . && git ci --amend'
 alias hgsl='glog 8'
-alias gpull='git fetch origin && git merge origin/master'
+alias _kko-get-git-master='git symbolic-ref refs/remotes/origin/HEAD'
+alias gpull='git fetch origin $(_gr_git_master) && git merge origin/$(_gr_git_master)'
+alias grebase='git fetch origin $(_gr_git_master) && git rebase -i origin/$(_gr_git_master)'
+alias gmaster='git co $(_gr_git_master)'
 alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push origin'
 alias brls='git branch -vv'
 alias brrm='git branch -D'
 
 alias ctt='cat ~/tmp/tmp'
 alias ltt='less ~/tmp/tmp'
-alias ttt='tail ~/tmp/tmp'
+alias ttt='tail -f ~/tmp/tmp'
 alias gtt='ctt | grep'
+alias wgeto='wget -q -O -'
 
 alias kc='kubectl'
 alias kc-debug='kc run $DASH_USER-shell --restart=Never --rm -i --tty --image debian -- bash'
+
+alias tf=terraform
+
+alias set-sudop='read -s "Stored in rootp car" sudop'
+
+function kc-debug-it () {
+    if [[ -z "$1" ]]
+    then
+        echo "Must provide cluster"
+        return 1
+    fi
+
+    if [[ -z "$2" ]]
+    then
+        echo "Must provide namespace"
+        return 1
+    fi
+
+    kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image debian -- bash
+}
 
 function brnew() {
     if [[ -z "$1" ]]
