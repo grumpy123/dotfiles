@@ -1,7 +1,7 @@
 # -*- shell-script -*-
 
 show_host="%99F%m%f"
-show_status="%(?,%46F➤%f,%196F‼%f)"
+show_status="%(?,%46F➤%f,%196F‼-%?%f)"
 
 PS1="${show_host} %14F%B%(7~,.../,)%6~%b%f
 %33F%B%*%b%f ${show_status} "
