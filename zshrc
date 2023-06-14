@@ -52,6 +52,8 @@ bindkey -M vicmd "^T" push-line-or-edit
 
 bindkey "^R" history-incremental-search-backward
 bindkey -M vicmd "^R" history-incremental-search-backward
+bindkey "^F" history-search-backward
+bindkey -M vicmd "^F" history-search-backward
 bindkey "^G" send-break
 bindkey -M vicmd "^G" send-break
 
@@ -201,13 +203,15 @@ alias hgdf='git diff'
 alias hgci='git add . && git ci'
 alias hga='git add . && git ci --amend'
 alias hgsl='glog 8'
-alias _kko-get-git-master='git symbolic-ref refs/remotes/origin/HEAD'
+alias __git_branch='git branch --show-current'
 alias gpull='git fetch origin $(_gr_git_master) && git merge origin/$(_gr_git_master)'
 alias grebase='git fetch origin $(_gr_git_master) && git rebase -i origin/$(_gr_git_master)'
+alias greset='git fetch origin && git reset --hard origin/$(__git_branch)'
 alias gmaster='git co $(_gr_git_master)'
 alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push origin'
 alias brls='git branch -vv'
 alias brrm='git branch -D'
+alias brco='git co'
 
 alias ctt='cat ~/tmp/tmp'
 alias ltt='less ~/tmp/tmp'
