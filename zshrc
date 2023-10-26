@@ -239,7 +239,9 @@ function kc-debug-it () {
         return 1
     fi
 
-    kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image debian -- bash
+    local _kc_image=${3:-debian}
+
+    kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image $_kc_image -- bash
 }
 
 function brnew() {
