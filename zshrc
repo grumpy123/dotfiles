@@ -226,6 +226,7 @@ alias tf=terraform
 
 alias set-sudop='read -s "Stored in rootp car" sudop'
 
+export KC_DEBUG_IMAGE='debian'
 function kc-debug-it () {
     if [[ -z "$1" ]]
     then
@@ -239,9 +240,9 @@ function kc-debug-it () {
         return 1
     fi
 
-    local _kc_image=${3:-debian}
+    local _kc_image=${3:-$KC_DEBUG_IMAGE}
 
-    kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image $_kc_image -- bash
+    kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image $_kc_image
 }
 
 function brnew() {
@@ -252,6 +253,19 @@ function brnew() {
     fi
 
     git create-branch -r "$1"
+}
+
+function brswitch() {
+    local _branch=$(git symbolic-ref --short)
+
+    if [[ -z "$1" ]]
+    then
+        echo "Must provide target commit or branch"
+        return 1
+    fi
+
+    git co "$1"
+    git switch -C "$_branch"
 }
 
 function fname() {
