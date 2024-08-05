@@ -27,7 +27,7 @@ export KEYTIMEOUT=1
 
 # Makes brew-managed stuff the default under OSX
 if [[ "$(uname)" == "Darwin" ]]; then
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbilsk:$PATH
 fi
 export PATH=~/bin/:$PATH
 
