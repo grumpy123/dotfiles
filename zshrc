@@ -245,6 +245,7 @@ function kc-debug-it () {
     kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image $_kc_image
 }
 
+# Depends on git-extras: brew install git-extras
 function brnew() {
     if [[ -z "$1" ]]
     then
