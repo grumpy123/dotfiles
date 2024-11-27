@@ -245,7 +245,7 @@ function kc-debug-it () {
     kc --context="$1" --namespace="$2" run "$DASH_USER-shell" --restart=Never --rm -i --tty --image $_kc_image
 }
 
-# Depends on git-extras: brew install git-extras
+export _BR_PREFIX=
 function brnew() {
     if [[ -z "$1" ]]
     then
@@ -253,7 +253,9 @@ function brnew() {
         return 1
     fi
 
-    git create-branch -r "$1"
+    # Depends on git-extras: brew install git-extras
+    # git create-branch -r "$_BR_PREFIX$1"
+    git co -b "$_BR_PREFIX$1"
 }
 
 function brswitch() {
@@ -273,75 +275,6 @@ function fname() {
     find . -type f -iname '*'$*'*' -ls
 }
 
-function agent-add() {
-    local add_key_bin=ssh-add
-    local key_file_path=
-    local key_pkcs11=
-
-    if [[ -n "$SSH_ADD_KEY_BIN" ]]
-    then
-        local add_key_bin=$SSH_ADD_KEY_BIN
-    fi
-
-    if [[ -n "$SSH_KEY_FILE_PATH" ]]
-    then
-        local key_file_path=$SSH_KEY_FILE_PATH
-    fi
-
-    if [[ -n "$SSH_KEY_PKCS11_LIB" ]]
-    then
-        local key_pkcs11=$SSH_KEY_PKCS11_LIB
-    fi
-
-    if [[ -n "$key_file_path" ]]
-    then
-        $add_key_bin $key_file_path
-    fi
-
-    if [[ -n "$key_pkcs11" ]]
-    then
-        $add_key_bin -s $key_pkcs11
-    fi
-}
-
-function agent() {
-    local agent_bin=ssh-agent
-
-    if [[ -n "$SSH_AGENT_BIN" ]]
-    then
-        local agent_bin=$SSH_AGENT_BIN
-    fi
-
-    local agent_pid_file=~/.ssh/.agent-pid-file
-    if [[ -f $agent_pid_file ]]
-    then
-        print 'refreshing agent from file'
-        eval `cat $agent_pid_file`
-    else
-        print 'no agent-pid file, cleaning environment'
-        SSH_AGENT_PID=
-    fi
-
-    # in case ssh-agent has died, we need to clean the $SSH_AGENT_PID variable
-    if [[ ( -n "$SSH_AGENT_PID" ) && ( -z "`ps -e | grep $SSH_AGENT_PID | grep ssh-agent`" ) ]] 
-    then
-        print 'cleaning $SSH_AGENT_PID variable'
-        SSH_AGENT_PID=
-    fi
-
-    # if the agent is not running, start it
-    if [[ -z "$SSH_AGENT_PID" ]]
-    then
-        print 'Starting new agent'
-        $agent_bin -s > $agent_pid_file
-        eval `cat $agent_pid_file`
-
-        agent-add
-    fi
-}
-
-alias kill-agent='killall ssh-agent'
-
 function calc_() {
   echo "$(($@))"
 }
@@ -352,3 +285,4 @@ export P4EDITOR=vim
 export VISUAL=vim
 
 source ~/.dotfiles-local/zshrc-post
+
