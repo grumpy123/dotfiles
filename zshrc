@@ -150,6 +150,8 @@ function _gr_git_master() {
 alias reload-zshrc=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 
 alias cat-zsh='cat ~/.zshrc ~/.dotfiles-local/zshrc*'
+alias vim-zsh='vim ~/.zshrc'
+alias vim-post-zsh='vim ~/.dotfiles-local/zshrc-post'
 # TODO: check if grep understands --color
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -212,6 +214,14 @@ alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push 
 alias brls='git branch -vv'
 alias brrm='git branch -D'
 alias brco='git co'
+
+alias gsync='gt restack'
+alias gss='gt restack && gt ss'
+alias gup='gt up'
+alias gnext='gt up'
+alias gdown='gt down'
+alias gprev='gt down'
+alias gcreate='gt create'
 
 alias ctt='cat ~/tmp/tmp'
 alias ltt='less ~/tmp/tmp'
