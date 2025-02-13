@@ -210,6 +210,7 @@ alias gpull='git fetch origin $(_gr_git_master) && git merge origin/$(_gr_git_ma
 alias grebase='git fetch origin $(_gr_git_master) && git rebase -i origin/$(_gr_git_master)'
 alias greset='git fetch origin && git reset --hard origin/$(__git_branch)'
 alias gmaster='git co $(_gr_git_master)'
+alias gadd='git add -A'
 alias gpush='[[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]] && git push origin'
 alias brls='git branch -vv'
 alias brrm='git branch -D'
