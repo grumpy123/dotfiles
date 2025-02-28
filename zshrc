@@ -191,7 +191,8 @@ alias -g NUL="> /dev/null 2>&1"
 alias -g X1='| xargs -n1 -r'
 
 alias ta-kko='tmux new-session -A -D -s kko'
-alias ta-bg='tmux new-session -A -D -s bg'
+alias ta-bg='tmux new-session -A -D -s bg \; set -t bg status-style "bg=color63"'
+alias ta-priv='tmux new-session -A -D -s priv \; set -t priv status-style "bg=color1"'
 
 alias vcreate='python3 -m venv venv'
 alias ve='source venv/bin/activate'
@@ -217,6 +218,7 @@ alias brrm='git branch -D'
 alias brco='git co'
 
 alias gsync='gt restack'
+alias gco='gt co'
 alias gss='gt restack && gt ss'
 alias gup='gt up'
 alias gnext='gt up'
@@ -236,6 +238,26 @@ alias kc-debug='kc run $DASH_USER-shell --restart=Never --rm -i --tty --image de
 alias tf=terraform
 
 alias set-sudop='read -s "Stored in rootp car" sudop'
+
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.zshrc
+#    or gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+    local reply
+    local si=$IFS
+    IFS=$'
+    ' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+    IFS=$si
+    _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
 
 export KC_DEBUG_IMAGE='debian'
 function kc-debug-it () {
