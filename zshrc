@@ -217,7 +217,7 @@ alias brls='git branch -vv'
 alias brrm='git branch -D'
 alias brco='git co'
 
-alias gsync='gt restack'
+alias gsync='gt sync'
 alias gco='gt co'
 alias gss='gt restack && gt ss'
 alias gup='gt up'
