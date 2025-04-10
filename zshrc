@@ -65,6 +65,7 @@ bindkey -M vicmd "v" edit-command-line
 setopt EXTENDEDGLOB 
 setopt NO_CASE_GLOB
 setopt NUMERIC_GLOB_SORT
+setopt INTERACTIVE_COMMENTS
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -163,6 +164,7 @@ else
 fi
 alias ll='ls -lh'
 alias la='ls -lah'
+alias md='mkdir'
 
 alias less='less -S'
 
@@ -226,6 +228,8 @@ alias gdown='gt down'
 alias gprev='gt down'
 alias gcreate='gt create'
 
+alias go-dotfiles='cd ~/dotfiles'
+alias go-tt='cd ~/tmp'
 alias ctt='cat ~/tmp/tmp'
 alias ltt='less ~/tmp/tmp'
 alias ttt='tail -f ~/tmp/tmp'
