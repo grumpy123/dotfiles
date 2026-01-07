@@ -230,7 +230,7 @@ alias gup='gt up'
 alias gnext='gt up'
 alias gdown='gt down'
 alias gprev='gt down'
-alias gcreate='gt create'
+alias gcreate='gadd && gt create'
 
 alias go-dotfiles='cd ~/dotfiles'
 alias go-tt='cd ~/tmp'
