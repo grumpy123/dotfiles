@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!env zsh
 
 set -e
 set -u
@@ -40,6 +40,8 @@ if [ -f ~/.dotfiles-local/setup ]; then
     print "Running ~/.dotfiles-local/setup"
     ~/.dotfiles-local/setup
 fi
+
+mkdir -p ~/tmp
 
 export GIT_DIR=$DIR/.git
 git config --global color.ui true
