@@ -305,8 +305,18 @@ function brnew() {
     git co -b "$_BR_PREFIX$1"
 }
 
-function brswitch() {
-    local _branch=$(git symbolic-ref --short)
+function br-reset-branch-to-this-commit() {
+    if [[ -z "$1" ]]
+    then
+        echo "Must provide target branch"
+        return 1
+    fi
+
+    git switch -C "$1"
+}
+
+function br-reset-this-branch-to-commit() {
+    local _branch=$(git branch --show-current)
 
     if [[ -z "$1" ]]
     then
