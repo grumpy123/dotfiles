@@ -254,6 +254,22 @@ alias tf=terraform
 
 alias set-sudop='read -s "Stored in rootp car" sudop'
 
+function hgcp () {
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: gcommit-prefix <prefix> [prefix...]"
+        return 1
+    fi
+    git add "$@" && git commit
+}
+
+function hgap () {
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: hgap <prefix> [prefix...]"
+        return 1
+    fi
+    git add "$@" && git commit --amend
+}
+
 #compdef gt
 ###-begin-gt-completions-###
 #
